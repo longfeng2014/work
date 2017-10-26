@@ -1,6 +1,5 @@
-assets/*
-!assets/.gitignore
-protected/runtime/*
+
+runtime/*
 !protected/runtime/.gitignore
 protected/data/*.db
 themes/classic/views/
