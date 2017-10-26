@@ -27,9 +27,9 @@ $config = [
 	'components' => [
 		'db' => [
 			'class' => 'yii\db\Connection',
-			'dsn' => 'mysql:host=47.94.215.209;dbname=mmkj',
+			'dsn' => 'mysql:host=182.254.153.39;dbname=mmkj',
 			'username' => 'root',
-			'password' => 'root',
+			'password' => '2014',
 			'charset' => 'utf8',
 			'tablePrefix' => 'mm_',
 		],
