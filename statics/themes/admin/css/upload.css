@@ -1,0 +1,16 @@
+
+   .layui-upload-list{
+      margin: 10px 0 0 0;
+      width: 94%;
+   }
+  .img , .operate{
+    width: 118px;
+    max-height: 98px;
+    margin-bottom: 10px;
+  }
+  .operate .cl{
+    position: relative;
+    cursor: pointer;
+    left: 115px;
+    top: -47px;
+  }

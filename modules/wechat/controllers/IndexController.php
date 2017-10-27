@@ -19,4 +19,16 @@ class IndexController extends \common\wechat\Controller
         echo '<a href="'.Yii::$app->request->hostInfo.'/admin">后台首页</a>';
         return $this->render('index');
     }
+
+
+    /**
+     * weuidemo页面
+     * @author longkui <jianglongkui@mmkongjian.com>
+     * @return [type] [description]
+     */
+    public function actionWeuidemo()
+    {
+        
+        $this->redirect(['../../statics/themes/wechat/weui/demos']);  
+    }
 }

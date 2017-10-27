@@ -25,10 +25,31 @@ use yii\helpers\Html;
         document.write("<scri"+"pt src='https://res.wx.qq.com/open/js/jweixin-1.1.0.js'></sc"+"ript>");
     };
 </script>
-
+<link href="/statics/themes/wechat/weui/lib/weui.min.css" rel="stylesheet">
+<link href="/statics/themes/wechat/weui/css/jquery-weui.css" rel="stylesheet">
+<script type="text/javascript" src="/statics/themes/wechat/weui/lib/fastclick.js"></script>
+<script type="text/javascript" src="/statics/themes/wechat/weui/lib/jquery-2.1.4.min.js"></script>
+    <title><?=Html::encode($this->title);?></title>
+<?php $this->head();?>
 
 <script type="text/javascript">
 
 </script>
+<link rel="shortcut icon" href="/favicon.ico"/>
 </head>
 <body>
+<?php $this->beginBody();?>
+    <div class="main">
+    <?php echo $content; ?>
+    </div>
+    <div class="clear"></div>
+    <footer class="footer">
+        <div class="container">
+        <p class="pull-left"></p>
+        </div>
+    </footer>
+<?php $this->endBody();?>
+<script type="text/javascript" src="/statics/themes/wechat/weui/js/jquery-weui.min.js"></script>
+</body>
+</html>
+<?php $this->endPage();?>

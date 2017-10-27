@@ -8,6 +8,7 @@ use Yii;
 use yii\web\User;
 use yii\di\Instance;
 use yii\web\ForbiddenHttpException;
+use common\base\Query;
 
 class AccessControl extends \yii\filters\AccessControl {
 
@@ -22,6 +23,11 @@ class AccessControl extends \yii\filters\AccessControl {
         $user = $this->user;
         //-----菜单权限检查-----
         $actionId = '/'.$action->getUniqueId();
+        //查询当前用户角色
+        $superId = '';
+        if (!Yii::$app->user->isGuest) {
+            $superId = (new Query)->from("{{%auth_assignment}}")->where(['user_id' => (string)Yii::$app->user->identity->id])->scalar();
+        }
         foreach ($this->rules as $i => $rule) {
             if(in_array($action->id, $rule->actions)) break;
             /*if(Yii::$app->user->identity->username == 'admin') {
@@ -30,7 +36,7 @@ class AccessControl extends \yii\filters\AccessControl {
                     'allow' => true,
                 ]));
             } else*/
-            if (!Yii::$app->user->can($actionId)) {
+            if (!Yii::$app->user->can($actionId) && $superId != '超级管理员') {
                 $this->rules[] = Yii::createObject(array_merge($this->ruleConfig, [
                     'actions' => [$action->id],
                     'allow' => false,

@@ -27,6 +27,8 @@ $allMenus = Menu::getMenu();
     <title><?= Yii::$app->params['basic']['sitename'].' - '.Html::encode($this->title) ?></title>
     <?php $this->head() ?>
     <link href="/statics/themes/admin/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/statics/themes/admin/layui/css/layui.css"  media="all">
+    <script src="/statics/themes/admin/layui/layui.js" charset="utf-8"></script> 
 <body>
 <?php $this->beginBody() ?>
 <div class="left-side sticky-left-side">
@@ -116,9 +118,10 @@ $allMenus = Menu::getMenu();
     </div>
 
     <div class="page-heading">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
+        <?php echo Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+             ]) 
+        ?>
     </div>
     <?= Alert::widget() ?>
     <div class="wrapper">

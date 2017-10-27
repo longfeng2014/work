@@ -12,7 +12,7 @@ use Yii;
 
 class Controller extends \common\base\Controller {
 
-    // public $layout = '@modules/wechat/views/layouts/base';
+    public $layout = '@modules/wechat/views/layouts/main';
     public $jsApiList = [];
     public $menuApiList = [];
     public $noMui = 0;
