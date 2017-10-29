@@ -1,4 +1,4 @@
-runtime/*
+runtime/
 !runtime/assets
 protected/runtime/*
 !protected/runtime/.gitignore
